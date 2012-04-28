@@ -18,6 +18,8 @@ class String
   end
 end
 
-def pbcopy
-  Pbcopy::Pasteboard
+
+def pbcopy(obj = (no_obj=true))
+  return Pbcopy::Pasteboard if no_obj
+  pbcopy < obj
 end

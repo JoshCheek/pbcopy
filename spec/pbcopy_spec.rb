@@ -42,4 +42,21 @@ describe 'pbcopy' do
       assert_put [[Pasteboard::Type::UTF_8, "123"]]
     end
   end
+
+
+  describe 'treating it like a method' do
+    specify 'pass any object to pbcopy as an alternative to pbcopy < obj' do
+      (pbcopy "hello world").should == "hello world"
+      assert_put [[Pasteboard::Type::UTF_8, "hello world"]]
+
+      (pbcopy 123).should == "123"
+      assert_put [[Pasteboard::Type::UTF_8, "123"]]
+
+      (pbcopy false).should == "false"
+      assert_put [[Pasteboard::Type::UTF_8, "false"]]
+
+      (pbcopy nil).should == ""
+      assert_put [[Pasteboard::Type::UTF_8, ""]]
+    end
+  end
 end
