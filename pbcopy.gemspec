@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Josh Cheek"]
   gem.email         = ["josh.cheek@gmail.com"]
   gem.description   = %q{Replicates OSX commandline utility where piping into pbcopy places things into the clipboard}
-  gem.summary       = %q{Pipe strings into pbcopy, within Ruby}
+  gem.summary       = %q{Use pbcopy in Ruby in the same way you would from the terminal}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($\)
