@@ -19,8 +19,8 @@ Which would copy the location of the ruby binary into your system's paste board.
 
 In Ruby you can pipe any string into pbcopy to achieve the same result
 
-   RUBY_VERSION | pbcopy
-   User.last.login | pbcopy
+    RUBY_VERSION | pbcopy
+    User.last.login | pbcopy
 
 
 ## Redirect arbitrary objects into pbcopy
