@@ -21,20 +21,20 @@ describe 'pbcopy' do
   end
 
 
-  describe 'piping a string into pbcopy' do
-    specify 'they end up in system clipboard' do
+  context 'when piping a string into pbcopy' do
+    it 'ends up in system clipboard' do
       "hello world" | pbcopy
       assert_put [[Pasteboard::Type::UTF_8, "hello world"]]
     end
 
-    specify 'the string is returned' do
+    it 'is returned' do
       ("hello world" | pbcopy).should == "hello world"
     end
   end
 
 
-  describe 'redirecting an object into pbcopy' do
-    specify 'is the same as `obj.to_s | pbcopy`' do
+  context 'when redirecting an object into pbcopy' do
+    it 'is the same as `obj.to_s | pbcopy`' do
       (pbcopy < "hello world").should == "hello world"
       assert_put [[Pasteboard::Type::UTF_8, "hello world"]]
 
@@ -44,7 +44,7 @@ describe 'pbcopy' do
   end
 
 
-  describe 'treating it like a method' do
+  context 'when treating it like a method' do
     specify 'pass any object to pbcopy as an alternative to pbcopy < obj' do
       (pbcopy "hello world").should == "hello world"
       assert_put [[Pasteboard::Type::UTF_8, "hello world"]]
