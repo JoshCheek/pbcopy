@@ -53,14 +53,4 @@ You can omit the chevron when redirecting into pbcopy
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'pbcopy'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
     $ gem install pbcopy
